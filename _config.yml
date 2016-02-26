@@ -1,0 +1,19 @@
+# Site settings
+title: Ki Lives Here
+email: kvimber@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "/pants" # the subpath of your site, e.g. /blog/
+url: "http://imbers.net" # the base hostname & protocol for your site
+twitter_username: k_hawk_1
+github_username:  kvimber
+
+# Build settings
+# markdown: kramdown
+markdown: redcarpet
+
+# from http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/
+redcarpet:
+  extensions: ["tables"]

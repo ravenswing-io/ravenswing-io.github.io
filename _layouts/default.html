@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+  <!-- DEFAULT.HTML SCRIPT -->
+  <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      showProcessingMessages: false,
+      messageStyle: 'none',
+      tex2jax: {
+        // http://docs.mathjax.org/en/latest/options/tex2jax.html
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+        // processEnvironments: false
+      },
+      TeX: {
+        equationNumbers: {
+          autoNumber: "AMS"
+        },
+        Macros: {
+          edge: '\\mathrel{-}',
+          notedge: '\\not\\edge',
+          deg: ['#1^{\\circ}', 1],
+          tbold: ['\\textbf{#1}', 1],
+          mbold: ['\\mathbf{#1}', 1],
+          unit: ['\\hat{\\mathbf{#1}}', 1],
+          magnitude: ['\\left \\| #1 \\right \\|', 1]
+        }
+      },
+      'HTML-CSS': {
+        imageFont: null
+      }
+    });
+  </script>
+  
+  <script type="text/javascript">
+  /*
+   * MathJax eqn preview for a tags
+   *
+   * Copyright (c) 2015 Mauricio Poppe
+   * Licensed under the MIT license.
+   */
+  
+  (function () {
+    var $container = $('.post-content');
+    var $tooltip = $('<div />').addClass('mathjax-tooltip');
+    $container.append($tooltip);
+  
+    function onMouseOver(ev) {
+      var a = ev.currentTarget;
+      var $number = $(a.hash);
+      var $root = $number.closest('.MathJax_Display');
+      var bounds = $(a).offset();
+      var containerBounds = $container.offset();
+  
+      $tooltip.stop(true, true);
+      $tooltip.empty();
+      $tooltip.append($root.clone());
+      $tooltip.css({
+        top: bounds.top - containerBounds.top - $tooltip.height() - 5,
+        left: -1
+      });
+      $tooltip.addClass('active');
+    }
+  
+    function onMouseOut(a) {
+      $tooltip.removeClass('active');
+    }
+  
+    MathJax.Hub.Queue(function () {
+      $container.on('mouseover', 'a[href*="mjx-eqn-"]', onMouseOver);
+      $container.on('mouseout', 'a[href*="mjx-eqn-"]', onMouseOut);
+    });
+  
+  })();
+  </script>
+
+</html>
