@@ -1,14 +1,14 @@
 # Site settings
-title: Ki Lives Here
-email: kvimber@gmail.com
+title: Ravens Wing
+email: ki@ravenswing.io
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/pants" # the subpath of your site, e.g. /blog/
-url: "http://imbers.net" # the base hostname & protocol for your site
-twitter_username: k_hawk_1
-github_username:  kvimber
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://ravenswing-io.github.io" # the base hostname & protocol for your site
+twitter_username: ravenswing_io
+github_username:  ravenswing-io
 
 # Build settings
 # markdown: kramdown
